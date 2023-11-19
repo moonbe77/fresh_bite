@@ -1,15 +1,55 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+
+import hero_img from '../assets/hero_1.jpeg';
 ---
 
-<Layout title="Astro template">
-	<main>
-		<h1>Welcome to <span class="text-gradient">bmunz.dev 
-		</span>
-		base templete
-	</h1>	
-		<ul role="list" class="link-card-grid">
+<Layout title="Ramen Life">
+	<main class="text-white">		
+	<div class=" w-full m-auto relative h-[calc(100vh-65px)] overflow-hidden max-h-[500px]">			
+		<Image src={hero_img} alt="Ramen Life"
+		class="w-full h-full fit-cover object-cover object-center"
+				width="500"
+			 	height="500"
+			 />
+			 <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  text-center">				 
+				 <h1 class="text-6xl text-white max-w-xl">Welcome to 			
+					 	<br>	
+				 		<span class="bg-text-gradient bg-clip-text text-8xl text-transparent hover:bg-clip-border hover:text-inherit transition rounded-md">Ramen Life</span>					 
+				</h1>	
+				</div>
+		</div>		
+		<div class="container m-auto flex gap-8">
+			<div class="bg-slate-800 rounded-lg p-10 mt-10">
+				<h2 class="text-4xl">What is Ramen Life?</h2>
+				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
+			</div>
+			<div class="bg-slate-800 rounded-lg p-10 mt-10">
+				<h2 class="text-4xl">Where can you find us?</h2>
+				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
+			</div>
+			<div class="bg-slate-800 rounded-lg p-10 mt-10">
+				<h2 class="text-4xl">What can you oreder?</h2>
+				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
+			</div>
+		</div>
+		<div class="container m-auto flex gap-8">
+			<div class="bg-slate-800 rounded-lg p-10 mt-10">
+				<h2 class="text-4xl">What is Ramen Life?</h2>
+				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
+			</div>
+			<div class="bg-slate-800 rounded-lg p-10 mt-10">
+				<h2 class="text-4xl">Where can you find us?</h2>
+				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
+			</div>
+			<div class="bg-slate-800 rounded-lg p-10 mt-10">
+				<h2 class="text-4xl">What can you oreder?</h2>
+				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
+			</div>
+		</div>
+		<!-- <ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
@@ -30,15 +70,15 @@ import Card from '../components/Card.astro';
 				title="Community"
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
-		</ul>
+		</ul> -->
 	</main>
 </Layout>
 
 <style>
-	main {
+	/* main {
 		margin: auto;
 		padding: 1rem;
-		width: 800px;
+		width: 20800px;
 		max-width: calc(100% - 2rem);
 		color: white;
 		font-size: 20px;
@@ -52,22 +92,22 @@ import Card from '../components/Card.astro';
 		width: 220px;
 		height: auto;
 		z-index: -1;
-	}
-	h1 {
+	} */
+	/* h1 {
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
-	}
-	.text-gradient {
+	} */
+	/* .text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
-	}
-	.instructions {
+	} */
+	/* .instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
 		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
@@ -90,5 +130,5 @@ import Card from '../components/Card.astro';
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 2rem;
 		padding: 0;
-	}
+	} */
 </style>
