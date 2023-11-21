@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
@@ -10,6 +11,10 @@ export default {
       16: "4rem",
     },
     extend: {
+      fontFamily: {
+        noto: ["Noto Sans JP Variable"],
+        sans: ["Noto Sans JP Variable", ...defaultTheme.fontFamily.sans],
+      },
       backgroundImage: ({ theme }) => ({
         "text-gradient": `linear-gradient(to right bottom, ${theme(
           "colors.purple.500"

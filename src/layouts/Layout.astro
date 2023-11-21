@@ -1,4 +1,6 @@
 ---
+// Supports weights 100-900
+import '@fontsource-variable/noto-sans-jp';
 import TopNavbar from '../components/TopNavbar.astro';
 interface Props {
 	title: string;
@@ -8,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" >
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -17,7 +19,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-slate-900">
+	<body class="bg-slate-50 ">
 		<TopNavbar />
 		<slot />
 	</body>
@@ -35,10 +37,7 @@ const { title } = Astro.props;
 			white 60%
 		);
 	}
-	html {
-		font-family: system-ui, sans-serif;		
-		/* background-size: 224px; */
-	}
+	
 	code {
 		font-family:
 			Menlo,
