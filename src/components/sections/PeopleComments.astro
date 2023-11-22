@@ -36,13 +36,16 @@ const commentsData = [
 ---
 
 <section
-  class="container m-auto my-16 bg-slate-200 pattern-hive-amber-700/50 pt-4"
+  class="container m-auto my-16 bg-slate-200 pattern-hive-amber-700/50 pattern-hive-scale-50 pt-4"
 >
-  <div class="flex justify-center m-8">
-    <h2 class="text-slate-700 font-sans text-4xl">
-      Waht our customers are saying!
+  <div class="flex justify-center m-8 relative">
+    <h2
+      class="text-slate-700 text-center font-sans text-4xl p-4 blur-none relative before:bg-slate-50 before:bg-opacity-80 before:bg-blend-saturation before:absolute before:top-0 before:left-0 before:h-full before:w-full before:z-[-1] before:blur-md"
+    >
+      Our customers are saying!
     </h2>
   </div>
+
   <div class="flex flex-row overflow-x-auto py-8">
     {
       commentsData.map((comment, index) => {
