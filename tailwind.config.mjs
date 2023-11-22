@@ -12,7 +12,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        noto: ["Noto Sans JP Variable"],
+        montserrat: ["'Montserrat Variable', sans-serif;"],
         sans: ["Noto Sans JP Variable", ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: ({ theme }) => ({
@@ -25,5 +25,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-patterns")],
 };

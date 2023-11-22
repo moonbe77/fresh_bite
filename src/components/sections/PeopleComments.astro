@@ -35,20 +35,25 @@ const commentsData = [
 ];
 ---
 
-<section class="container m-auto my-16">
-  <div class="flex justify-center">
-    <h2 class="text-slate-700 font-sans">Comments</h2>
+<section
+  class="container m-auto my-16 bg-slate-200 pattern-hive-amber-700/50 pt-4"
+>
+  <div class="flex justify-center m-8">
+    <h2 class="text-slate-700 font-sans text-4xl">
+      Waht our customers are saying!
+    </h2>
   </div>
-  <div class="flex flex-row overflow-x-scroll gap-8">
+  <div class="flex flex-row overflow-x-auto py-8">
     {
       commentsData.map((comment, index) => {
         return (
-          <div class="rounded-lg bg-slate-100 text-slate-700 min-w-[400px] border p-4  shadow-xl ">
-            <h3 class="text-xl flex justify-between whitespace-nowrap">
-              {comment.name}
-              <span class="text-sm text-slate-500">{comment.date}</span>
-            </h3>
-            <p>{comment.comment}</p>
+          <div class="rounded-lg  text-slate-700 min-w-[25vw] bg-slate-50  p-8  shadow-xl min-h-[250px] relative flex items-center justify-center mx-8">
+            <div class="flex flex-col border-l-4 border-slate-400 pl-2">
+              <p class="mb-4">{comment.comment}</p>
+              <h3 class="text-lg flex justify-center whitespace-nowrap ">
+                {comment.name}
+              </h3>
+            </div>
           </div>
         );
       })
