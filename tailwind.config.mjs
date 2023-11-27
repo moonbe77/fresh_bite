@@ -12,8 +12,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        montserrat: ["'Montserrat Variable', sans-serif;"],
-        sans: ["Noto Sans JP Variable", ...defaultTheme.fontFamily.sans],
+        // sans: [...defaultTheme.fontFamily.sans],
+        montserrat: ["Montserrat Variable"],
+        outfit: ["Outfit Variable"],
+        gameOver: ["Press Start 2P"],
       },
       backgroundImage: ({ theme }) => ({
         "text-gradient": `linear-gradient(to right bottom, ${theme(

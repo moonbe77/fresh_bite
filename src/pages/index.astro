@@ -1,51 +1,61 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import PeopleComments from '../components/sections/PeopleComments.astro';
-import hero_img from '../assets/hero_1.jpeg';
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import PeopleComments from "../components/sections/PeopleComments.astro";
+import hero_img from "../assets/hero_1.jpeg";
 ---
 
 <Layout title="Ramen Life">
-	<main class="text-white">		
-	<div class=" w-full m-auto relative h-[calc(100vh-65px)] overflow-hidden max-h-[500px] font-sans">			
-		<Image src={hero_img} alt="Ramen Life"
-		class="w-full h-full fit-cover object-cover object-center"
-				width="500"
-			 	height="500"
-			 />
-			 <div class="absolute top-1/2  transform -translate-y-1/2  text-center w-full bg-gradient-to-r from-slate-800  to-transparent bg-opacity-10 py-4">				 
-				 <h1 class="text-6xl text-white max-w-xl">Welcome to 			
-					 	<br>	
-				 		<span class="bg-text-gradient bg-clip-text text-8xl text-transparent hover:bg-clip-border hover:text-inherit transition rounded-md">Ramen Life</span>					 
-				</h1>	
-				</div>
-		</div>		
-		<section class="container m-auto flex gap-4 flex-wrap mt-8">
-			
+  <main class="text-white">
+    <div
+      class="w-full m-auto relative h-[calc(100vh-65px)] overflow-hidden max-h-[500px] font-sans"
+    >
+      <Image
+        src={hero_img}
+        alt="Ramen Life"
+        class="w-full h-full fit-cover object-cover object-center"
+        width="500"
+        height="500"
+      />
 
-				<Card
-				href="/"
-				title="What is Ramen Life?"
-				
-				>
-				<p>Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
-				</Card>
+      <div
+        class="absolute top-1/2 transform -translate-y-1/2 text-center w-full bg-gradient-to-r from-slate-800 to-transparent bg-opacity-10 py-4"
+      >
+        <h1 class="text-6xl text-white max-w-xl whitespace-nowrap">
+          <span
+            class="bg-text-gradient bg-clip-text text-8xl text-transparent hover:bg-clip-border hover:text-inherit transition rounded-md"
+          >
+            Web Templates
+          </span>
+        </h1>
+      </div>
+    </div>
+    <section class="container m-auto flex gap-4 flex-wrap mt-8">
+      <Card href="/" title="What is Ramen Life?">
+        <p class="flex items-center gap-2">
+          Ramen Life is a place where you can find the best ramen recipes from
+          all over the world.
+        </p>
+      </Card>
 
-			
-				
-			
-			<div class="bg-slate-800 rounded-lg p-10  flex-1">
-				<h2 class="text-4xl">Where can you find us?</h2>
-				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
-			</div>
-			<div class="bg-slate-800 rounded-lg p-10 flex-1 ">
-				<h2 class="text-4xl">Check the menu?</h2>
-				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
-			</div>
-		</section>
-		<PeopleComments />
-		<!-- <section class="container m-auto flex gap-8">
+      <div class="bg-slate-800 rounded-lg p-10 flex-1">
+        <h2 class="text-4xl">Where can you find us?</h2>
+        <p class="mt-5">
+          Ramen Life is a place where you can find the best ramen recipes from
+          all over the world.
+        </p>
+      </div>
+      <div class="bg-slate-800 rounded-lg p-10 flex-1">
+        <h2 class="text-4xl">Check the menu?</h2>
+        <p class="mt-5">
+          Ramen Life is a place where you can find the best ramen recipes from
+          all over the world.
+        </p>
+      </div>
+    </section>
+    <PeopleComments />
+    <!-- <section class="container m-auto flex gap-8">
 			<div class="bg-slate-800 rounded-lg p-10 mt-10">
 				<h2 class="text-4xl">What is Ramen Life?</h2>
 				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
@@ -59,7 +69,7 @@ import hero_img from '../assets/hero_1.jpeg';
 				<p class="mt-5">Ramen Life is a place where you can find the best ramen recipes from all over the world.</p>
 			</div>
 		</section> -->
-		<!-- <ul role="list" class="link-card-grid">
+    <!-- <ul role="list" class="link-card-grid">
 			<Card
 				href="https://docs.astro.build/"
 				title="Documentation"
@@ -81,11 +91,11 @@ import hero_img from '../assets/hero_1.jpeg';
 				body="Come say hi to our amazing Discord community. ❤️"
 			/>
 		</ul> -->
-	</main>
+  </main>
 </Layout>
 
 <style>
-	/* main {
+  /* main {
 		margin: auto;
 		padding: 1rem;
 		width: 20800px;
@@ -103,21 +113,21 @@ import hero_img from '../assets/hero_1.jpeg';
 		height: auto;
 		z-index: -1;
 	} */
-	/* h1 {
+  /* h1 {
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
 	} */
-	/* .text-gradient {
+  /* .text-gradient {
 		background-image: var(--accent-gradient);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-size: 400%;
 		background-position: 0%;
 	} */
-	/* .instructions {
+  /* .instructions {
 		margin-bottom: 2rem;
 		border: 1px solid rgba(var(--accent-light), 25%);
 		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
