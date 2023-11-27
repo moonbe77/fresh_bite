@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import hero_img from "@assets/hero_1.jpg";
+---
+
+<div
+  class="w-full m-auto relative h-[calc(100vh-65px)] overflow-hidden max-h-[500px] font-sans"
+>
+  <Image
+    src={hero_img}
+    alt="Ramen Life"
+    class="w-full h-full fit-cover object-cover object-center"
+    width="500"
+    height="500"
+  />
+
+  <div
+    class="absolute top-1/2 transform -translate-y-1/2 text-center w-full bg-gradient-to-r from-slate-800 to-transparent bg-opacity-10 py-4"
+  >
+    <h1 class="text-6xl text-white max-w-xl whitespace-nowrap">
+      <span
+        class="bg-text-gradient bg-clip-text text-8xl text-transparent hover:bg-clip-border hover:text-inherit transition rounded-md"
+      >
+        Web Templates
+      </span>
+    </h1>
+  </div>
+</div>

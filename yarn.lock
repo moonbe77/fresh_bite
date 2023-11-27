@@ -567,11 +567,6 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/outfit/-/outfit-5.0.8.tgz#b36c731d3b0283d931438d3ffcec5d1149fd47fa"
   integrity sha512-j4JHCbuk2+Nl7PwTVT+RJKTDMDw7TWWt/85CIucD7KvOS7Iv0IiymE5ur21/aFbTwamOHrXX91WrQZHN7QDrmw==
 
-"@fontsource/press-start-2p@^5.0.17":
-  version "5.0.17"
-  resolved "https://registry.yarnpkg.com/@fontsource/press-start-2p/-/press-start-2p-5.0.17.tgz#2cdb3e44f505a0b5f35df7758328c80f8114b0f6"
-  integrity sha512-SDL6gTliNlNSph3igwExx7HQxJTzG6wOdFr4fxfx6K46SbYm6Rm4WtXIGitsoKMqUwE6PyibrmXF6el1uwn3Rg==
-
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"
