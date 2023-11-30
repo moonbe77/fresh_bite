@@ -1,28 +1,21 @@
 ---
 import { Image } from "astro:assets";
-import hero_img from "@assets/hero_1.jpg";
+import hero_img from "@assets/hero_2.jpeg";
 ---
 
-<div
-  class="w-full m-auto relative h-[calc(100vh-65px)] overflow-hidden max-h-[500px] font-sans"
->
+<div class="relative">
   <Image
     src={hero_img}
     alt="Ramen Life"
-    class="w-full h-full fit-cover object-cover object-center"
+    class="w-full h-full fit-cover object-cover object-center rounded-2xl rounded-tl-none rounded-tr-none opacity-100 filter-none mix-blend-darken max-h-[500px]"
     width="500"
     height="500"
   />
-
   <div
-    class="absolute top-1/2 transform -translate-y-1/2 text-center w-full bg-gradient-to-r from-slate-800 to-transparent bg-opacity-10 py-4"
+    class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-white"
   >
-    <h1 class="text-6xl text-white max-w-xl whitespace-nowrap">
-      <span
-        class="bg-text-gradient bg-clip-text text-8xl text-transparent hover:bg-clip-border hover:text-inherit transition rounded-md"
-      >
-        Web Templates
-      </span>
-    </h1>
+    <h1 class="text-6xl border rounded-xl p-2">FRESHiT</h1>
+    <h4 class="text-xl">a random text here</h4>
+    <button class="">Book a Table</button>
   </div>
 </div>
