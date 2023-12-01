@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import hero_img from "@assets/hero_2.jpeg";
+import Button from "@components/Button.astro";
 ---
 
 <div class="relative">
@@ -12,10 +13,12 @@ import hero_img from "@assets/hero_2.jpeg";
     height="500"
   />
   <div
-    class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-white"
+    class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-white text-center"
   >
-    <h1 class="text-6xl border rounded-xl p-2">FRESHiT</h1>
-    <h4 class="text-xl">a random text here</h4>
-    <button class="">Book a Table</button>
+    <h1 class="text-6xl border rounded-xl p-2">FreshBite</h1>
+    <h4 class="text-lg uppercase">
+      Savor the Flavor: A Template for Fresh Dining Experiences
+    </h4>
+    <Button styles="mt-20">Book a Table</Button>
   </div>
 </div>
