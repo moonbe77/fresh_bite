@@ -1,16 +1,20 @@
 ---
-import { Image } from "astro:assets";
-import hero_img from "@assets/hero_2.jpeg";
+import Image from '@/components/commons/Image.astro';
+import hero_img from "@assets/images/meat&potato.jpeg";
 import Button from "@components/Button.astro";
 ---
 
 <div class="relative">
   <Image
     src={hero_img}
-    alt="Ramen Life"
-    class="w-full h-full fit-cover object-cover object-center rounded-2xl rounded-tl-none rounded-tr-none opacity-100 filter-none mix-blend-darken max-h-[500px]"
-    width="500"
-    height="500"
+    alt="FreshBite Hero Image of a steak and smashed potatoes meal border border-red-500"
+    class="w-full h-full  object-cover  max-h-[500px]"
+    width="1344"
+    height="768"
+    layout='responsive'
+    sizes="(max-width: 1920px) 100vw, 500px"
+    loading='eager'
+    fetchpriority='high'
   />
   <div
     class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-white text-center"
