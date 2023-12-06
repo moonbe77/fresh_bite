@@ -1,0 +1,35 @@
+---
+import Button from "@/components/ui/Button.astro";
+import {headerData} from "@/data/navigation";
+
+---
+
+<header class=" h-14 bg-slate-900 flex justify-between items-center text-white px-4">
+  <div class="bg-text-gradient">LOGO</div>
+  <div>
+    <ul>
+      {headerData.links.map((item)=>{
+        return (
+          <li class="inline-block px-4 py-2"> 
+            <Button 
+              variant="link"
+              href={item.link}
+            >
+              {item.text}
+            </Button>
+          </li>
+           )
+        })}
+    </ul>
+  </div>
+  <div>
+    <Button 
+      variant="secondary"
+      href="/#"    
+    >
+      Make a Reservation
+    </Button>
+
+
+  </div>
+</header>
