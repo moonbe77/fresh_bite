@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 
-
-
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);

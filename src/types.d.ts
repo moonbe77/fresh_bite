@@ -1,8 +1,8 @@
-declare module "*.avif" {
+declare module '*.avif' {
   const src: string;
   export default src;
 }
-declare module "*.jpeg" {
+declare module '*.jpeg' {
   const src: string;
   export default src;
 }
@@ -284,6 +284,21 @@ export interface Content extends Headline, Widget {
   columns?: number;
   isReversed?: boolean;
   isAfterContent?: boolean;
+  callToAction?: CallToAction;
+}
+
+export interface MenuItem {
+  name: string;
+  dietaryInfo: Array<string>;
+  description: string;
+  price: number;
+  image: string;
+  story: string;
+}
+export interface MenuContent extends Headline, Widget {
+  items?: Array<MenuItem>;
+  columns?: number;
+  isReversed?: boolean;
   callToAction?: CallToAction;
 }
 

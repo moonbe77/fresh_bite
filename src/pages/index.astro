@@ -1,131 +1,128 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Hero from "@components/sections/Hero.astro";
-import Content from "@components/sections/Content.astro";
-import Section1Image from "@assets/images/polentaSquare.jpeg";
-import Section2Image from "@assets/images/1.jpg";
-import Section3Image from "@assets/images/2.jpg";
+import Layout from '../layouts/Layout.astro';
+import Hero from '@components/sections/Hero.astro';
+import Content from '@components/sections/Content.astro';
+import Section1Image from '@assets/images/polentaSquare.jpeg';
+import Section2Image from '@assets/images/1.jpg';
+import Section3Image from '@assets/images/2.jpg';
 ---
 
 <Layout title="FreshBite">
   <main class="text-white">
     <Hero />
 
-		<Content 
-		isReversed
-		id="about"
-		tagline="What is FreshBite?"
-		title="FreshBite is a flavourfull food dining experience."
-		subtitle="Get in contact to build your own FreshBite."
-		items={[
-			{
-				title: 'Sleek Design',        
-        description:
-				'Our template boasts a modern and intuitive design that effortlessly guides visitors through a visual feast of your culinary offerings.',
-      },
-      {
-				title: 'Responsive Layout',
-        description:
-				'From desktop to mobile, FreshBite ensures a seamless browsing experience, allowing your audience to explore your menu with ease.',
-      },
-      {
-				title: 'Dynamic Menus',
-        description:	
-					'Showcase your diverse menu options with captivating visuals and detailed descriptions. Let your dishes speak for themselves.',				
-      },
+    <Content
+      isReversed
+      id="about"
+      tagline="What is FreshBite?"
+      title="FreshBite is a flavourfull food dining experience."
+      subtitle="Get in contact to build your own FreshBite."
+      items={[
+        {
+          title: 'Sleek Design',
+          description:
+            'Our template boasts a modern and intuitive design that effortlessly guides visitors through a visual feast of your culinary offerings.',
+        },
+        {
+          title: 'Responsive Layout',
+          description:
+            'From desktop to mobile, FreshBite ensures a seamless browsing experience, allowing your audience to explore your menu with ease.',
+        },
+        {
+          title: 'Dynamic Menus',
+          description:
+            'Showcase your diverse menu options with captivating visuals and detailed descriptions. Let your dishes speak for themselves.',
+        },
+      ]}
+      image={{
+        src: Section1Image,
+        alt: 'Colorful Image',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+          Building on modern foundations
+        </h3>
+         Gain a competitive advantage by incorporating industry leading practices
+      </Fragment>
 
-		]}
-			
-		image={{
-			src: Section1Image,
-			alt: 'Colorful Image',
-		}}
-		>
-		<Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-       Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-zinc-50 dark:bg-transparent"></div>
+      </Fragment>
+    </Content>
+    <!-- Other content -->
+    <Content
+      id="about"
+      items={[
+        {
+          title: 'Gallery Showcase',
+          description:
+            'Display the artistry of your dishes and the inviting atmosphere of your restaurant through a stunning image gallery.',
+        },
+        {
+          title: 'Social Media',
+          description:
+            'FreshBite is fully integrated with your social media accounts, allowing your customers to stay up to date with your latest offerings.',
+        },
+        {
+          title: 'SEO',
+          description:
+            'FreshBite is fully optimized for search engines, ensuring your website is easily discoverable by your customers.',
+        },
+      ]}
+      image={{
+        src: Section2Image,
+        alt: 'Colorful Image',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why FreshBite?</h3>
+         FreshBite is more than just a template; it's a commitment to helping you build a digital presence that mirrors
+        the freshness and vibrancy of your culinary offerings. With customizable features and an easy-to-use interface,
+        your restaurant's unique identity will shine through.
+      </Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-zinc-900 dark:bg-transparent"></div>
-    </Fragment>
-		
-		</Content>
- 		<!-- Other content -->
-		<Content 		
-		id="about"
-		items={[			
-			{
-				title: 'Gallery Showcase',
-				description:
-				'Display the artistry of your dishes and the inviting atmosphere of your restaurant through a stunning image gallery.',
-			},
-			{
-				title: 'Social Media',
-				description:
-				'FreshBite is fully integrated with your social media accounts, allowing your customers to stay up to date with your latest offerings.',
-			},
-			{
-				title: 'SEO',
-				description:
-				'FreshBite is fully optimized for search engines, ensuring your website is easily discoverable by your customers.',
-			},
-		]}
-			
-		image={{
-			src: Section2Image,
-			alt: 'Colorful Image',
-		}}
-		>
-		<Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Why FreshBite?</h3>
-      FreshBite is more than just a template; it's a commitment to helping you build a digital presence that mirrors the freshness and vibrancy of your culinary offerings. With customizable features and an easy-to-use interface, your restaurant's unique identity will shine through.
-    </Fragment>
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-zinc-800 dark:bg-transparent"></div>
+      </Fragment>
+    </Content>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-zinc-800 dark:bg-transparent"></div>
-    </Fragment>
-		
-		</Content>
+    <!-- Other content -->
+    <Content
+      id="about"
+      isReversed
+      title="Boost Customer Engagement!"
+      items={[
+        {
+          title: 'Testimonial Integration',
+          description: 'Feature glowing reviews from satisfied customers to build trust and credibility.',
+        },
+        {
+          title: 'Customization Services',
+          description:
+            "As a freelance web developer, I offer tailored customization to ensure the FreshBite template aligns perfectly with your restaurant's brand.",
+        },
+        {
+          title: 'Technical Support',
+          description:
+            'I provide ongoing technical support to address any questions or concerns, ensuring your website runs smoothly.',
+        },
+      ]}
+      image={{
+        src: Section3Image,
+        alt: 'Colorful Image',
+      }}
+    >
+      <Fragment slot="content">
+        <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">How I Can Help:</h3>
+         FreshBite is more than just a template; it's a commitment to helping you build a digital presence that mirrors
+        the freshness and vibrancy of your culinary offerings. With customizable features and an easy-to-use interface,
+        your restaurant's unique identity will shine through.
+      </Fragment>
 
-	
-	<!-- Other content -->
- <Content 		
- id="about"	
- isReversed
- title="Boost Customer Engagement!"
- items={[			
-	 {
-		 title: 'Testimonial Integration',
-		 description:
-		 'Feature glowing reviews from satisfied customers to build trust and credibility.',
-	 },
-	 {
-		 title: 'Customization Services',
-		 description:
-		 "As a freelance web developer, I offer tailored customization to ensure the FreshBite template aligns perfectly with your restaurant's brand.",
-	 },
-	 {
-		 title: 'Technical Support',
-		 description:
-		 'I provide ongoing technical support to address any questions or concerns, ensuring your website runs smoothly.',
-	 },
- ]}
-	 
- image={{
-	 src: Section3Image,
-	 alt: 'Colorful Image',
- }}
- >
- <Fragment slot="content">
-	 <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">How I Can Help:</h3>
-	 FreshBite is more than just a template; it's a commitment to helping you build a digital presence that mirrors the freshness and vibrancy of your culinary offerings. With customizable features and an easy-to-use interface, your restaurant's unique identity will shine through.
- </Fragment>
-
- <Fragment slot="bg">
-	 <div class="absolute inset-0 bg-zinc-900 dark:bg-transparent"></div>
- </Fragment> 
- </Content>
+      <Fragment slot="bg">
+        <div class="absolute inset-0 bg-zinc-900 dark:bg-transparent"></div>
+      </Fragment>
+    </Content>
   </main>
 </Layout>
-

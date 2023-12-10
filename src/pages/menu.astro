@@ -1,8 +1,14 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import Layout from '@/layouts/Layout.astro';
+import MenuData from '@/data/menu.json';
+import MenuSection from '@/components/sections/MenuSection.astro';
+const { appetizers, mainCourses, desserts, caffeOptions, drinks } = MenuData.menu;
 ---
 
-
 <Layout title="FreshBite - menu">
-
+  <MenuSection title="Appetizers" items={appetizers} />
+  <MenuSection title="Mains" items={mainCourses} />
+  <MenuSection title="Desserts" items={desserts} />
+  <MenuSection title="Drinks" items={drinks} />
+  <MenuSection title="Caffe" items={caffeOptions} />
 </Layout>
