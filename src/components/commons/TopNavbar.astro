@@ -1,35 +1,35 @@
 ---
-import Button from "@/components/ui/Button.astro";
-import {headerData} from "@/data/navigation";
-
+import Button from '@/components/ui/Button.astro';
+import { headerData } from '@/data/navigation';
+import { Image } from 'astro:assets';
+import logo from '@/assets/logo/svg/logo-no-background.svg';
+import ToggleTheme from '@/components/commons/ToggleTheme.astro';
 ---
 
-<header class=" h-14 bg-slate-900 flex justify-between items-center text-white px-4">
-  <div class="bg-text-gradient">LOGO</div>
+<header
+  id="header"
+  class="h-24 bg-slate-900 flex justify-between items-center text-white px-4 dark:text-slate-900 dark:bg-slate-50"
+>
+  <div class="">
+    <Image src={logo} alt="logo" width="150" height="100" />
+  </div>
   <div>
     <ul>
-      {headerData.links.map((item)=>{
-        return (
-          <li class="inline-block px-4 py-2"> 
-            <Button 
-              variant="link"
-              href={item.link}
-            >
-              {item.text}
-            </Button>
-          </li>
-           )
-        })}
+      {
+        headerData.links.map((item) => {
+          return (
+            <li class="inline-block px-4 py-2">
+              <Button variant="link" href={item.link}>
+                {item.text}
+              </Button>
+            </li>
+          );
+        })
+      }
     </ul>
   </div>
   <div>
-    <Button 
-      variant="secondary"
-      href="/#"    
-    >
-      Make a Reservation
-    </Button>
-
-
+    <ToggleTheme />
+    <Button variant="secondary" href="/#">Make a Reservation</Button>
   </div>
 </header>
