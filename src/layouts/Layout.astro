@@ -2,9 +2,10 @@
 import '../assets/styles/tailwind.css';
 
 import CustomStyles from '@/components/CustomStyles.astro';
-
+import { headerData } from '@/data/navigation';
 import TopNavbar from '@components/commons/TopNavbar.astro';
 import BasicScripts from '@/components/common/BasicScripts.astro';
+// import { ViewTransitions } from 'astro:transitions';
 interface Props {
   title: string;
 }
@@ -23,12 +24,15 @@ const { title } = Astro.props;
     <title>{title ?? 'FreshBite'}</title>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <CustomStyles />
+
+    <!-- Uncomment line below to activate View Transitions -->
+    <!-- <ViewTransitions fallback="swap" /> -->
   </head>
   <body class="antialiased text-default bg-page tracking-tight">
-    <BasicScripts />
-    <TopNavbar />
-    <div>
+    <TopNavbar id="header" isSticky showToggleTheme {...headerData} />
+    <main>
       <slot />
-    </div>
+    </main>
+    <BasicScripts />
   </body>
 </html>

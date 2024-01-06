@@ -1,31 +1,31 @@
+import { getPermalink, getBlogPermalink, getAsset } from '@/utils/permalinks';
 export const headerData = {
   links: [
     {
       text: 'Home',
-      link: '/',
-      links: []
+      href: '/',
+      links: [],
     },
     {
       text: 'About',
-      link: '/#about',
-      links: []
+      href: '/#about',
+      links: [],
     },
     {
       text: 'Menu',
-      link: '/menu',
-      links: []
+      href: '/menu',
+      links: [],
     },
     {
       text: 'Gallery',
-      link: '/gallery',
-      links: []
+      href: '/gallery',
+      links: [],
     },
     {
       text: 'Contact',
-      link: '/contact',
-      links: []
+      href: '/contact',
+      links: [],
     },
-   
   ],
   actions: [{ text: 'Make a Reservation', href: '#callToAction', target: '_blank' }],
 };
