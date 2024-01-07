@@ -1,0 +1,47 @@
+---
+import Logo from '@/components/Logo.astro';
+import SectionWrapper from '@/components/ui/SectionWrapper.astro';
+import Layout from '@/layouts/Layout.astro';
+import Headline from '@/components/ui/Headline.astro';
+import Content from '@/components/sections/Content.astro';
+import Button from '@/components/ui/Button.astro';
+import Section1Image from '@assets/images/6.jpg';
+import ContactUs from '@/components/sections/Contact.astro';
+---
+
+<Layout>
+  <ContactUs
+    tagline="Contact"
+    title="Let's get in touch."
+    subtitle="We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible."
+    isReversed
+    image={{
+      src: Section1Image,
+      alt: 'Colorful Image',
+    }}
+    inputs={[
+      {
+        label: 'Name',
+        type: 'text',
+        placeholder: 'Enter your name',
+        name: 'name',
+      },
+      {
+        label: 'Email',
+        type: 'email',
+        name: 'email',
+        placeholder: 'Enter your email',
+      },
+      {
+        label: 'Phone Number',
+        type: 'tel',
+        name: 'phone',
+        placeholder: 'Enter your phone number',
+      },
+    ]}
+    textarea={{
+      label: 'Message',
+      placeholder: 'Enter your message',
+    }}
+  />
+</Layout>

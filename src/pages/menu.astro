@@ -4,7 +4,7 @@ import MenuContent from '@components/sections/MenuContent.astro';
 
 import { menu } from '@/data/menu';
 import MenuSection from '@/components/sections/MenuSection.astro';
-import SectionWrapper from '@/components/ui/SectionWrapper.astro';
+
 const { appetizers, mainCourses, desserts, coffeeOptions, drinks } = menu;
 
 const metadata = {
@@ -53,12 +53,12 @@ const options = [
     subtitle="Our menu is a collection of traditional Italian dishes, with a modern twist. We use only the freshest ingredients, and our pasta is made in-house daily."
   >
     <Fragment slot="content">
-      <div class="flex flex-row md:flex-row md:space-x-2 content-between min-w-full">
+      <div class="flex flex-col md:flex-row space-x-0 space-y-2 md:space-x-2 md:space-y-0 content-between">
         {
           options.map((type) => (
             <a
               href={`#${type.title}`}
-              class="min-w-24 bg-slate-100 p-10  rounded flex-1 hover:bg-slate-200 cursor-pointer"
+              class="min-w-24 bg-slate-100 p-2  md:p-6 lg:p-10 rounded flex-1 hover:bg-slate-200 cursor-pointer text-center"
             >
               <div class=" text-slate-800 text-2xl">{type.title}</div>
             </a>
@@ -67,12 +67,10 @@ const options = [
       </div>
     </Fragment>
     <Fragment slot="bg">
-      <div class="absolute inset-0 bg-slate-200 dark:bg-transparent"></div>
+      <div class="absolute inset-0 bg-slate-200 dark:bg-slate-800"></div>
     </Fragment>
   </MenuContent>
 
-  <div>
-    {options.map((type) => <MenuSection {...type} id={type.title} />)}
-  </div>
+  {options.map((type) => <MenuSection {...type} id={type.title} />)}
 </Layout>
  @/data/menu

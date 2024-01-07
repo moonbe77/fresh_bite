@@ -1,0 +1,34 @@
+---
+import FormContainer from '@/components/ui/FormContainer.astro';
+import Headline from '@/components/ui/Headline.astro';
+import SectionWrapper from '@/components/ui/SectionWrapper.astro';
+import type { Contact } from '@/types';
+interface ContactForm {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  id,
+  inputs,
+  textarea,
+  bg,
+} = Astro.props as Contact;
+---
+
+<SectionWrapper id={id} title={title} subtitle={subtitle} tagline={tagline} bg={bg}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
+
+  {
+    inputs && (
+      <div class="flex flex-col max-w-xl mx-auto rounded-lg backdrop-blur border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-4 sm:p-6 lg:p-8 w-full">
+        <FormContainer inputs={inputs} textarea={textarea} />
+      </div>
+    )
+  }
+</SectionWrapper>
