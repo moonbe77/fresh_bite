@@ -1,6 +1,6 @@
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-// import type { OpenGraph } from '@astrolib/seo';
+import type { OpenGraph } from '@astrolib/seo';
 
 const load = async function () {
   let images: Record<string, () => Promise<unknown>> | undefined = undefined;
@@ -48,52 +48,53 @@ export const findImage = async (
 };
 
 /** */
-// export const adaptOpenGraphImages = async (
-//   openGraph: OpenGraph = {},
-//   astroSite: URL | undefined = new URL('')
-// ): Promise<OpenGraph> => {
-//   if (!openGraph?.images?.length) {
-//     return openGraph;
-//   }
+export const adaptOpenGraphImages = async (
+  openGraph: OpenGraph = {},
+  astroSite: URL | undefined = new URL('')
+): Promise<OpenGraph> => {
+  if (!openGraph?.images?.length) {
+    return openGraph;
+  }
 
-//   const images = openGraph.images;
-//   const defaultWidth = 1200;
-//   const defaultHeight = 626;
+  const images = openGraph.images;
+  console.log('images', images);
+  const defaultWidth = 1200;
+  const defaultHeight = 626;
 
-//   const adaptedImages = await Promise.all(
-//     images.map(async (image) => {
-//       if (image?.url) {
-//         const resolvedImage = (await findImage(image.url)) as ImageMetadata | undefined;
-//         if (!resolvedImage) {
-//           return {
-//             url: '',
-//           };
-//         }
+  const adaptedImages = await Promise.all(
+    images.map(async (image) => {
+      if (image?.url) {
+        const resolvedImage = (await findImage(image.url)) as ImageMetadata | undefined;
+        if (!resolvedImage) {
+          return {
+            url: '',
+          };
+        }
 
-//         const _image = await getImage({
-//           src: resolvedImage,
-//           alt: 'Placeholder alt',
-//           width: image?.width || defaultWidth,
-//           height: image?.height || defaultHeight,
-//         });
+        const _image = await getImage({
+          src: resolvedImage,
+          alt: 'Placeholder alt',
+          width: image?.width || defaultWidth,
+          height: image?.height || defaultHeight,
+        });
 
-//         if (typeof _image === 'object') {
-//           return {
-//             url: typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : 'pepe',
-//             width: typeof _image.width === 'number' ? _image.width : undefined,
-//             height: typeof _image.height === 'number' ? _image.height : undefined,
-//           };
-//         }
-//         return {
-//           url: '',
-//         };
-//       }
+        if (typeof _image === 'object') {
+          return {
+            url: typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : 'pepe',
+            width: typeof _image?.attributes.width === 'number' ? _image?.attributes.width : undefined,
+            height: typeof _image?.attributes.height === 'number' ? _image?.attributes.height : undefined,
+          };
+        }
+        return {
+          url: '',
+        };
+      }
 
-//       return {
-//         url: '',
-//       };
-//     })
-//   );
+      return {
+        url: '',
+      };
+    })
+  );
 
-//   return { ...openGraph, ...(adaptedImages ? { images: adaptedImages } : {}) };
-// };
+  return { ...openGraph, ...(adaptedImages ? { images: adaptedImages } : {}) };
+};

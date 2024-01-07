@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+// /** @type {import('tailwindcss').Config} */
 const defaultTheme = require('tailwindcss/defaultTheme');
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -19,9 +19,9 @@ export default {
         muted: 'var(--aw-color-text-muted)',
       },
       fontFamily: {
-        sans: ['Montserrat Variable', ...defaultTheme.fontFamily.sans],
-        montserrat: ['Montserrat Variable'],
-        outfit: ['Outfit Variable'],
+        sans: ['var(--aw-font-sans)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--aw-font-serif)', ...defaultTheme.fontFamily.serif],
+        heading: ['var(--aw-font-heading)', ...defaultTheme.fontFamily.sans],
       },
       backgroundImage: ({ theme }) => ({
         'text-gradient': `linear-gradient(to right bottom, ${theme('colors.purple.500')},  ${theme(

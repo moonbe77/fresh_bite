@@ -2,40 +2,52 @@
 import SectionWrapper from '@/components/ui/SectionWrapper.astro';
 import Headline from '@/components/ui/Headline.astro';
 import type { MenuContent } from '@/types';
+import { Image } from 'astro:assets';
 
 const { items = [], title, id, subtitle, tagline, isDark } = Astro.props as MenuContent;
 ---
 
-<SectionWrapper isDark={isDark}>
-  <Headline title={title} />
-  <p>{subtitle}</p>
+<SectionWrapper isDark={isDark} {...id ? { id } : {}}>
+  <Headline title={title} subtitle={subtitle} tagline={tagline} />
 
   <ul class="space-y-4 lg:col-span-full">
     {
       items?.map((item) => (
-        <li class="p-6 rounded-lg bg-slate-500 dark:bg-slate-50  text-card-foreground shadow-sm" data-v0-t="card">
-          <div class="flex flex-col space-y-1.5 pb-4">
-            <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full" />
-            <h2 class="text-xl font-bold text-slate-100 dark:text-slate-900">{item.name}</h2>
-          </div>
-          <p class="text-gray-200 dark:text-gray-100 py-4">{item.description}</p>
-          <div class="py-4">
-            {item.dietaryInfo.map((di) => {
-              return (
-                <div
-                  class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80"
-                  color="green"
-                >
-                  {di}
-                </div>
-              );
-            })}
+        <li class=" rounded-lg bg-slate-500 dark:bg-slate-300  text-card-foreground shadow-sm">
+          <div class="flex flex-row">
+            <div class="flex-1 p-6">
+              <div class="flex flex-col space-y-1.5 pb-4">
+                <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full" />
+                <h2 class="text-xl font-bold text-slate-100 dark:text-slate-900">{item.name}</h2>
+              </div>
+
+              <p class="text-gray-100 dark:text-gray-600 py-4">{item.description}</p>
+
+              <div class="py-4 flex flex-row gap-2">
+                {item.dietaryInfo.map((di) => {
+                  return (
+                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
+                      {di}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div class="">
+              <Image
+                src={item.image}
+                alt={item.name}
+                class="object-cover object-center w-full h-full"
+                width={400}
+                height={400}
+              />
+            </div>
           </div>
         </li>
       ))
     }
   </ul>
   <Fragment slot="bg">
-    <div class="absolute inset-0 bg-slate-50 dark:bg-transparent"></div>
+    <div class="absolute inset-0 dark:bg-transparent"></div>
   </Fragment>
 </SectionWrapper>

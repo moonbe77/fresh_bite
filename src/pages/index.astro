@@ -5,10 +5,17 @@ import Content from '@components/sections/Content.astro';
 import Section1Image from '@assets/images/polentaSquare.jpeg';
 import Section2Image from '@assets/images/1.jpg';
 import Section3Image from '@assets/images/2.jpg';
+
+const metadata = {
+  title: 'FreshBite',
+  description:
+    'FreshBite is a flavourfull food dining experience. Website template built with in base of AstroWind template.',
+  ignoreTitleTemplate: true,
+};
 ---
 
-<Layout title="FreshBite">
-  <main class="text-white">
+<Layout metadata={metadata}>
+  <main>
     <Hero />
     <Content
       isReversed

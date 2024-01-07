@@ -1,30 +1,26 @@
 ---
 import Image from '@/components/commons/Image.astro';
-import hero_img from "@assets/images/meat&potato.jpeg";
-import Button from "@components/Button.astro";
+import hero_img from '@assets/images/meat&potato.jpeg';
+import Button from '@components/ui/Button.astro';
 ---
 
-<div class="relative">
+<div class="relative z-0">
   <Image
     src={hero_img}
-    alt="FreshBite Hero Image of a steak and smashed potatoes meal border border-red-500"
-    class="w-full h-full  object-cover  max-h-[500px]"
+    alt="FreshBite Hero Image of a steak and smashed potatoes meal"
+    class="w-full h-full object-cover max-h-[500px] z-0"
     width="1344"
     height="768"
-    layout='responsive'
+    layout="responsive"
     sizes="(max-width: 1920px) 100vw, 500px"
-    loading='eager'
-    fetchpriority='high'
+    loading="eager"
+    fetchpriority="high"
   />
-  <div
-    class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-white text-center"
-  >
+  <div class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 text-white text-center">
     <div class="border rounded-xl p-2 flex flex-col">
       <h1 class="text-6xl border-b border-b-green-100">FreshBite</h1>
-      <h4 class="text-lg uppercase mt-1">
-        Savor the Flavor: A Template for Fresh Dining Experiences
-      </h4>
+      <h4 class="text-lg uppercase mt-1">Savor the Flavor: A Template for Fresh Dining Experiences</h4>
     </div>
-    <Button styles="mt-20">Book a Table</Button>
+    <Button class="mt-20" variant="primary">Make a Reservation</Button>
   </div>
 </div>

@@ -1,14 +1,78 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import MenuData from '@/data/menu.json';
+import MenuContent from '@components/sections/MenuContent.astro';
+
+import { menu } from '@/data/menu';
 import MenuSection from '@/components/sections/MenuSection.astro';
-const { appetizers, mainCourses, desserts, caffeOptions, drinks } = MenuData.menu;
+import SectionWrapper from '@/components/ui/SectionWrapper.astro';
+const { appetizers, mainCourses, desserts, coffeeOptions, drinks } = menu;
+
+const metadata = {
+  title: 'Menu',
+  description:
+    'Our menu is a collection of traditional Italian dishes, with a modern twist. We use only the freshest ingredients, and our pasta is made in-house daily.',
+};
+
+const options = [
+  {
+    title: 'Appetizers',
+    subtitle: 'Start your meal off right with one of our delicious appetizers.',
+    tagline: '',
+    items: appetizers,
+  },
+  {
+    title: 'Mains',
+    subtitle: 'Our main courses are made with the freshest ingredients, and our pasta is made in-house daily.',
+    tagline: '',
+    items: mainCourses,
+  },
+  {
+    title: 'Desserts',
+    subtitle: 'Finish your meal off with one of our delicious desserts.',
+    tagline: '',
+    items: desserts,
+  },
+  {
+    title: 'Drinks',
+    subtitle: 'We have a wide selection of drinks to choose from.',
+    tagline: '',
+    items: drinks,
+  },
+  {
+    title: 'Caffe',
+    subtitle: 'We have a wide selection of caffe options to choose from.',
+    tagline: 'Somehting else?',
+    items: coffeeOptions,
+  },
+];
 ---
 
-<Layout title="FreshBite - menu">
-  <MenuSection title=" Appetizers" items={appetizers} />
-  <MenuSection title="Mains" items={mainCourses} />
-  <MenuSection title="Desserts" items={desserts} />
-  <MenuSection title="Drinks" items={drinks} />
-  <MenuSection title="Caffe" items={caffeOptions} />
+<Layout metadata={metadata}>
+  <MenuContent
+    title="Menu"
+    subtitle="Our menu is a collection of traditional Italian dishes, with a modern twist. We use only the freshest ingredients, and our pasta is made in-house daily."
+  >
+    <Fragment slot="content">
+      <div class="flex flex-row md:flex-row md:space-x-2 content-between min-w-full">
+        {
+          options.map((type) => (
+            <a
+              href={`#${type.title}`}
+              class="min-w-24 bg-slate-100 p-10  rounded flex-1 hover:bg-slate-200 cursor-pointer"
+            >
+              <div class=" text-slate-800 text-2xl">{type.title}</div>
+            </a>
+          ))
+        }
+      </div>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-slate-200 dark:bg-transparent"></div>
+    </Fragment>
+  </MenuContent>
+
+  <div>
+    {options.map((type) => <MenuSection {...type} id={type.title} />)}
+  </div>
 </Layout>
+ @/data/menu

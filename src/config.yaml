@@ -1,6 +1,6 @@
 site:
-  name: FreshBite
-  site: 'https://astrowind.vercel.app'
+  name: FreshBite 🍽
+  site: 'https://freshbite.vercel.app'
   base: '/'
   trailingSlash: false
 
